@@ -1,0 +1,5 @@
+momo.partnerCode=${MOMO_PARTNER_CODE}
+momo.accessKey=${MOMO_ACCESS_KEY}
+momo.secretKey=${MOMO_SECRET_KEY}
+momo.redirectUrl=${MOMO_REDIRECT_URL}
+momo.ipnUrl=${MOMO_IPN_URL}

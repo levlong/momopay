@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thanh toán bằng MoMo</title>
+</head>
+<body>
+  <h2>Thanh toán khóa học LearnWorlds</h2>
+  <p>Giá: 1000 VND</p>
+  <button onclick="pay()">Thanh toán bằng MoMo</button>
+
+  <script>
+    async function pay() {
+      const res = await fetch("/api/v1/payment/momo", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          amount: "1000",
+          orderInfo: "Khóa học LearnWorlds cơ bản"
+        })
+      });
+      const result = await res.json();
+      window.location.href = result.payUrl; // Chuyển đến trang MoMo
+    }
+  </script>
+</body>
+</html>
